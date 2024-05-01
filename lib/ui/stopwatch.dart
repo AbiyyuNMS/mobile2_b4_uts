@@ -15,7 +15,7 @@ class _StopwatchAppState extends State<StopwatchApp> {
   void initState() {
     super.initState();
     _stopwatch.start();
-    _timer = Timer.periodic(Duration(milliseconds: 30), (timer) {
+    _timer = Timer.periodic(const Duration(milliseconds: 30), (timer) {
       setState(() {});
     });
   }
@@ -37,6 +37,7 @@ class _StopwatchAppState extends State<StopwatchApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff4793AF),
       appBar: AppBar(
         backgroundColor: const Color(0xff074173),
         title: const Text(
@@ -45,14 +46,19 @@ class _StopwatchAppState extends State<StopwatchApp> {
         ),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Text(
               formatTime(),
-              style: TextStyle(fontSize: 48),
+              style: const TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
-          Column(
+          const SizedBox(
+            height: 100,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               FloatingActionButton(
                 onPressed: () {
@@ -60,7 +66,7 @@ class _StopwatchAppState extends State<StopwatchApp> {
                   // _stopwatch.reset();
                   // _stopwatch.start();
                 },
-                child: Icon(Icons.stop_circle),
+                child: const Icon(Icons.stop_circle),
               ),
               FloatingActionButton(
                 onPressed: () {
@@ -68,7 +74,7 @@ class _StopwatchAppState extends State<StopwatchApp> {
                   _stopwatch.reset();
                   // _stopwatch.start();
                 },
-                child: Icon(Icons.refresh),
+                child: const Icon(Icons.refresh),
               ),
               FloatingActionButton(
                 onPressed: () {
@@ -76,7 +82,7 @@ class _StopwatchAppState extends State<StopwatchApp> {
                   // _stopwatch.reset();
                   _stopwatch.start();
                 },
-                child: Icon(Icons.play_circle),
+                child: const Icon(Icons.play_circle),
               ),
             ],
           )

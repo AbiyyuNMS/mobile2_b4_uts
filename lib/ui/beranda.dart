@@ -14,6 +14,54 @@ class EppBar extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'AppBar',
       home: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const [
+              UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("images/lofi2.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundImage: AssetImage("images/fotogueh.jpg"),
+                  ),
+                  accountName: Text("Abiyyu Nong Maulana Soge"),
+                  accountEmail: Text("abiyyuperfect@gmail.com")),
+              // Container(
+              //   width: double.infinity,
+              //   height: 105,
+              //   color: const Color(0xff074173),
+              //   alignment: Alignment.bottomLeft,
+              //   padding: const EdgeInsets.only(left: 10, bottom: 7),
+              //   child: const Text(
+              //     "Menu",
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //       fontSize: 20,
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 12,
+              ),
+              ListTile(
+                leading: Icon(Icons.home, size: 25),
+                title: Text("Home", style: TextStyle(fontSize: 17)),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings, size: 25),
+                title: Text("Settings", style: TextStyle(fontSize: 17)),
+              ),
+              ListTile(
+                leading: Icon(Icons.star, size: 25),
+                title: Text("Favourites", style: TextStyle(fontSize: 17)),
+              ),
+            ],
+          ),
+        ),
         backgroundColor: const Color(0xffE3FEF7),
         appBar: AppBar(
           title: const Text(
@@ -21,15 +69,6 @@ class EppBar extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: const Color(0xff074173),
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, const Pertemuan2().toString());
-            },
-            icon: const Icon(
-              Icons.list_rounded,
-              color: Colors.white,
-            ),
-          ),
         ),
         body: Center(
           child: Column(
@@ -47,49 +86,49 @@ class EppBar extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, Pertemuan2.nameRoute);
                   },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xff074173)),
                   child: const Text(
                     'Halaman MyContainer',
                     style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xff074173))),
+                  )),
               const SizedBox(height: 20),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, MyLayout1.nameRoute);
                   },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xff074173)),
                   child: const Text(
                     'Halaman MyLayout01',
                     style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xff074173))),
+                  )),
               const SizedBox(height: 20),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, MyBio.nameRoute);
                   },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xff074173)),
                   child: const Text(
                     'Halaman DataDiri',
                     style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xff074173))),
+                  )),
               const SizedBox(height: 20),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, StopwatchApp.nameRoute);
                   },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xff074173)),
                   child: const Text(
                     'Halaman Stopwatch',
                     style: TextStyle(fontSize: 20),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: const Color(0xff074173))),
+                  )),
             ],
           ),
         ),
