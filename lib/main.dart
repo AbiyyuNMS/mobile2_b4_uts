@@ -5,6 +5,7 @@ import 'package:pertemuan2_abiyyu223/ui/container.dart';
 import 'package:pertemuan2_abiyyu223/ui/layout01.dart';
 import 'package:pertemuan2_abiyyu223/ui/stopwatch.dart';
 import 'package:pertemuan2_abiyyu223/ui/mybio.dart';
+import 'package:pertemuan2_abiyyu223/ui/wakw.dart';
 
 void main() {
   runApp(const MainApp());
@@ -25,6 +26,7 @@ class MainApp extends StatelessWidget {
         MyLayout1.nameRoute: (context) => const MyLayout1(),
         MyBio.nameRoute: (context) => const MyBio(),
         StopwatchApp.nameRoute: (context) =>  StopwatchApp(),
+        ChatLayout.nameRoute: (context) =>  ChatLayout(),
         // '/Page02': (context) => const MyLayout1()
       },
     );

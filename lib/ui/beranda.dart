@@ -3,6 +3,7 @@ import 'package:pertemuan2_abiyyu223/ui/container.dart';
 import 'package:pertemuan2_abiyyu223/ui/layout01.dart';
 import 'package:pertemuan2_abiyyu223/ui/stopwatch.dart';
 import 'package:pertemuan2_abiyyu223/ui/mybio.dart';
+import 'package:pertemuan2_abiyyu223/ui/wakw.dart';
 
 class EppBar extends StatelessWidget {
   static const nameRoute = '/homepage';
@@ -127,6 +128,18 @@ class EppBar extends StatelessWidget {
                       backgroundColor: const Color(0xff074173)),
                   child: const Text(
                     'Halaman Stopwatch',
+                    style: TextStyle(fontSize: 20),
+                  )),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ChatLayout.nameRoute);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: const Color(0xff074173)),
+                  child: const Text(
+                    'Halaman Layout Chat',
                     style: TextStyle(fontSize: 20),
                   )),
             ],
